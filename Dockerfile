@@ -8,12 +8,16 @@ LABEL org.label-schema.name="MiniDLNA server" \
     org.label-schema.schema-version="1.0" \
     maintainer="Ivonet - @ivonet"
 
-RUN apk --no-cache add minidlna
+RUN apk --no-cache add minidlna bash tini
+COPY minidlna.conf /etc/minidlna.conf
+COPY entrypoint.sh /entrypoint.sh
 
-ADD minidlna.conf /etc/minidlna.conf
+ENV MINIDLNA_FRIENDLY_NAME="IvoNet DLNA" \
+    MINIDLNA_NOTIFY_INTERVAL=30 \
+    MINIDLNA_MEDIA_DIR="V,/videos"
 
+VOLUME ["/var/lib/minidlna"]
 EXPOSE 1900/udp
 EXPOSE 8200
 
-
-ENTRYPOINT [ "/usr/sbin/minidlnad", "-S" ]
+ENTRYPOINT ["/sbin/tini", "--", "/entrypoint.sh"]
