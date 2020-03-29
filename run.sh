@@ -12,5 +12,5 @@ docker run \
    -v "${HOME}/Music:/music" \
    -e MINIDLNA_MEDIA_DIR_PICTURES="P,/pics" \
    -v "${HOME}/Pictures:/pics" \
-   -v "$(pwd)/.data:/var/lib/minidlna" \
+   -v "$(pwd)/.data:/minidlna" \
    ivonet/minidlna

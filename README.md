@@ -67,11 +67,11 @@ Other properties can also be overridden like:
 ```bash
    -e MINIDLNA_FRIENDLY_NAME="FooBarBaz DLNA" \
    -e MINIDLNA_NOTIFY_INTERVAL=10 \
-   -v "$(pwd)/.data:/var/lib/minidlna" 
+   -v "$(pwd)/.data:/minidlna" 
 ```
 * `MINIDLNA_FRIENDLY_NAME` will broadcast a new friendly name of your choosing (default: IvoNet DLNA)
 * `MINIDLNA_NOTIFY_INTERVAL` will set the notify interval in seconds (default: 30)
-* `/var/lib/minidlna` is the volume where minidlna stores its data. You can chose to mount that to your disk or 
+* `/minidlna` is the volume where minidlna stores its data. You can chose to mount that to your disk or 
 other volume to persist it between containers
 
 

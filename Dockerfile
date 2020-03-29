@@ -16,7 +16,7 @@ ENV MINIDLNA_FRIENDLY_NAME="IvoNet DLNA" \
     MINIDLNA_NOTIFY_INTERVAL=30 \
     MINIDLNA_MEDIA_DIR="V,/videos"
 
-VOLUME ["/var/lib/minidlna"]
+VOLUME ["/minidlna"]
 EXPOSE 1900/udp
 EXPOSE 8200
 
