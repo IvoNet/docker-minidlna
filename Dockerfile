@@ -1,4 +1,4 @@
-FROM alpine:3.11
+FROM ivonet/alpine:3.13
 ARG VERSION=1.0
 LABEL org.label-schema.name="MiniDLNA server" \
     org.label-schema.description="MiniDLNA" \
